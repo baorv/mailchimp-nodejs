@@ -1,0 +1,26 @@
+{
+  "name": "mailchimp-nodejs",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "typings": "./dist/src/index.d.ts",
+  "license": "MIT",
+  "author": "baorv <roanvanbao@gmail.com>",
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "rm -rf dist && tsc -d",
+    "lint": "tslint --project . {examples,src,test}/**/*.ts",
+    "test": "npm run lint && npm run build && ava --serial"
+  },
+  "devDependencies": {
+    "@types/node": "^12.6.2",
+    "ava": "^2.2.0",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "axios": "^0.19.0"
+  },
+  "files": [
+    "./dist"
+  ]
+}
